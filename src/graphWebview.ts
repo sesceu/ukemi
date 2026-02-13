@@ -151,7 +151,7 @@ export class JJGraphWebview implements vscode.WebviewViewProvider {
         bookmarks.map(|b| b.name()).join(", "), "|",
         self.commit_id().short(), "|",
         self.commit_id().shortest(), "|",
-        if(self.working_copies(), "@", if(self.contained_in("visible_heads()"), "◆", "○")), "|",
+        if(current_working_copy, "@", if(self.working_copies(), "@", if(self.contained_in("visible_heads()"), "◆", "○"))), "|",
         if(self.empty(), "true", "false"), "|",
         if(self.immutable(), "true", "false"), "|",
         description.first_line(),
